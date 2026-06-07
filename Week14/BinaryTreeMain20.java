@@ -3,10 +3,11 @@ package Week14;
 public class BinaryTreeMain20 {
     public static void main(String[] args) {
         BinaryTree20 bst = new BinaryTree20();
-        bst.add(new Student20("244107020138", "Devin", "TI-1I", 3.57));
-        bst.add(new Student20("244107020023", "Dewi", "TI-1I", 3.85));
-         bst.add(new Student20("244107020225", "Wahyu", "TI-1I", 3.21)); 
-        bst.add(new Student20("244107020076", "Angelina", "TI-1I", 3.54)); 
+
+        bst.addRecursive(new Student20("244107020138", "Devin", "TI-1I", 3.57));
+        bst.addRecursive(new Student20("244107020023", "Dewi", "TI-1I", 3.85));
+        bst.addRecursive(new Student20("244107020225", "Wahyu", "TI-1I", 3.21));
+        bst.addRecursive(new Student20("244107020076", "Angelina", "TI-1I", 3.54));
  
         System.out.println("Student list (in-order traversal)"); 
         bst.traverseInOrder(bst.root); 
@@ -20,9 +21,10 @@ public class BinaryTreeMain20 {
         result = bst.find(3.22) ? "Found" : "Not Found"; 
         System.out.println(result); 
  
-        bst.add(new Student20("244107020223", "Andhika", "TI-1I", 3.72)); 
-        bst.add(new Student20("244107020226", "Bima", "TI-1I", 3.37)); 
-        bst.add(new Student20("244107020181", "Eiyu", "TI-1I", 3.46)); 
+        bst.addRecursive(new Student20("244107020223", "Andhika", "TI-1I", 3.72)); 
+        bst.addRecursive(new Student20("244107020226", "Bima", "TI-1I", 3.37)); 
+        bst.addRecursive(new Student20("244107020181", "Eiyu", "TI-1I", 3.46)); 
+        
         System.out.println("Student list:"); 
         System.out.println("In-order traversal:"); 
         bst.traverseInOrder(bst.root); 
@@ -34,6 +36,14 @@ public class BinaryTreeMain20 {
         System.out.println("Data deletion"); 
         bst.delete(3.57); 
         System.out.println("Student list after deletion:"); 
-        bst.traverseInOrder(bst.root); 
+        bst.traverseInOrder(bst.root);
+
+        System.out.println("Minimum IPK:");
+        bst.getMinIPK();
+        System.out.println("Maximum IPK:");
+        bst.getMaxIPK();
+
+        System.out.println("Students with IPK above 3.50:");
+        bst.displayStudentsWithIPKAbove(3.50);
     } 
 } 
