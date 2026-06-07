@@ -202,4 +202,20 @@ public class BinaryTree20 {
         System.out.println("Student with maximum IPK:");
         current.data.print();
     }    
+
+    public void displayStudentsWithIPKAbove(double threshold) {
+        displayStudentsWithIPKAbove(root, threshold);
+    }
+
+    void displayStudentsWithIPKAbove(Node20 node, double threshold) {
+        if (node != null) {
+            displayStudentsWithIPKAbove(node.left, threshold);
+
+            if (node.data.ipk > threshold) {
+                node.data.print();
+            }
+
+            displayStudentsWithIPKAbove(node.right, threshold);
+        }
+    }
 }
