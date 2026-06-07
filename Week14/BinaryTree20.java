@@ -152,4 +152,22 @@ public class BinaryTree20 {
             successor.left = current.left;
         }
     }
+
+    public void addRecursive(Student20 data) {
+        root = addRecursive(root, data);
+    }
+
+    Node20 addRecursive(Node20 current, Student20 data) {
+        if (current == null) {
+            return new Node20(data);
+        }
+
+        if (data.ipk < current.data.ipk) {
+            current.left = addRecursive(current.left, data);
+        } else if (data.ipk > current.data.ipk) {
+            current.right = addRecursive(current.right, data);
+        }
+
+        return current;
+    }
 }
