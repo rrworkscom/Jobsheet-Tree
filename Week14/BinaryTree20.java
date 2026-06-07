@@ -170,4 +170,36 @@ public class BinaryTree20 {
 
         return current;
     }
+
+    public void getMinIPK() {
+        if (isEmpty()) {
+            System.out.println("Tree is empty!");
+            return;
+        }
+
+        Node20 current = root;
+
+        while (current.left != null) {
+            current = current.left;
+        }
+
+        System.out.println("Student with minimum IPK:");
+        current.data.print();
+    }
+
+    public void getMaxIPK() {
+        if (isEmpty()) {
+            System.out.println("Tree is empty!");
+            return;
+        }
+
+        Node20 current = root;
+
+        while (current.right != null) {
+            current = current.right;
+        }
+
+        System.out.println("Student with maximum IPK:");
+        current.data.print();
+    }    
 }
